@@ -76,3 +76,4 @@ fabric.properties
 
 ### NPM template
 node_modules
+npm-debug.log
