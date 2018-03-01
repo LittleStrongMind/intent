@@ -9,7 +9,8 @@
     "sass": "node-sass src/css -o dist",
     "lint": "eslint src/javascript",
     "prerelease": "rm -rf dist/* && mkdir -p dist",
-    "release": "npm run lint && npm run sass && npm run minify && npm run compile"
+    "release": "npm run lint && npm run sass && npm run postcss && npm run minify && npm run compile",
+    "postcss": "postcss -c postcss.config.json -o dist/intent.css dist/intent.css"
   },
   "babel": {
     "presets": [
@@ -19,14 +20,17 @@
   "author": "LittleStrongMind",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^8.0.0",
     "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "csscomb": "^4.2.0",
     "eslint": "^4.10.0",
     "google-closure-compiler-js": "^20170910.0.1",
     "minami": "^1.2.3",
     "minifier": "^0.8.1",
-    "csscomb": "^4.2.0",
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.7.2",
+    "postcss-cli": "^5.0.0",
+    "postcss-color-rgba-fallback": "^3.0.0"
   }
 }
