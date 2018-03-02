@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="u-fill" lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>intent</title>
+
+        <meta name="viewport" content="width=device-width" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
+
+        <link rel="stylesheet" href="dist/intent.min.css">
+    </head>
+
+    <body class="o-body u-fill">
+
+        <div class="c-mask u-fill"></div>
+
+        <header class="o-header u-center">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="o-brand__logo" viewBox="0 0 512 512" role="logo">
+                <path class="o-brand__logo__1" fill="#6856bf" d="M511.017 397.885L398.792 103.431c-2.216-5.815-7.793-9.658-14.017-9.658h-257.55c-6.223 0-11.8 3.843-14.017 9.658L.984 397.885c-1.757 4.611-1.135 9.791 1.665 13.853 2.799 4.063 7.417 6.489 12.352 6.489h482c4.934 0 9.552-2.426 12.352-6.489 2.799-4.062 3.421-9.242 1.664-13.853z"/>
+                <path class="o-brand__logo__2" fill="#5b4ca8" d="M113.208 103.431L.984 397.885c-1.757 4.611-1.135 9.791 1.665 13.853 2.799 4.063 7.417 6.489 12.352 6.489h230.167L121.885 94.763c-3.918 1.494-7.124 4.594-8.677 8.668z"/>
+                <path class="o-brand__logo__3" fill="#856ff8" d="M113.208 103.431L.984 397.885c-1.757 4.611-1.135 9.791 1.665 13.853 2.799 4.063 7.417 6.489 12.352 6.489h103.224V96.802c-2.215 1.661-3.985 3.923-5.017 6.629z"/>
+            </svg>
+
+        </header>
+
+        <section class="o-section u-x-fill">
+
+            <div class="js-anchor"></div>
+
+            <button class="c-new-intent-button">new intent</button>
+
+            <!-- terrible hack to make the cards stay align with flex -->
+            <div class="_c-card-reset"></div>
+            <div class="_c-card-reset"></div>
+            <div class="_c-card-reset"></div>
+
+        </section>
+
+        <!-- todo : give 'o-mask' a better name -->
+        <section class="o-intent-modal-container u-center u-fill">
+
+            <div class="c-intent-modal">
+
+                <svg class="c-intent-modal__close-icon" fill="#000000" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" role="button">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                </svg>
+
+                <form class="js-intent-modal-form">
+
+                    <div class="c-intent-modal__input-wrapper">
+                        <label for="c-intent-title">title</label>
+                        <input id="c-intent-title" type="text" name="title" placeholder="Where is Bryan?">
+                    </div>
+
+                    <div class="c-intent-modal__input-wrapper">
+                        <label for="c-intent-expressions">expressions</label>
+                        <textarea id="c-intent-expressions" name="expressions" placeholder="One on each line"></textarea>
+
+                    </div>
+
+                    <div class="c-intent-modal__input-wrapper">
+                        <label for="c-intent-answer">answer</label>
+                        <input id="c-intent-answer" type="text" name="answer" placeholder="In the kitchen!">
+                    </div>
+
+                    <div class="c-intent-modal__actions-bar">
+
+                        <button class="c-intent-modal__actions-bar__cancel-button c-button c-button--red">cancel</button>
+                        <button class="c-intent-modal__actions-bar__create-button c-button c-button--purple" type="submit" disabled>create</button>
+
+                        <button class="c-intent-modal__actions-bar__edit-button c-button c-button--purple" type="submit" disabled>edit</button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <script src="dist/intent.min.js"></script>
+
+    </body>
+</html>
