@@ -1,0 +1,13 @@
+.o-section {
+    display: inline-flex;
+    flex-wrap: wrap;
+
+    max-width: 1000px;
+
+    margin-top: 120px;
+
+    & .js-anchor {
+        display: none;
+    }
+
+}

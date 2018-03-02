@@ -1,0 +1,75 @@
+.c-button {
+
+    padding: 6px 12px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+
+    &__icon {
+        margin-right: 5px;
+    }
+
+    &[disabled] {
+        opacity: 0.4;
+        cursor: default;
+    }
+
+    &--red {
+        background: #f05449;
+        box-shadow: 0 2px 4px rgba(240, 84, 73, 0.2);
+    }
+
+    &--green {
+        background: #4abe89;
+        box-shadow: 0 2px 4px rgba(74, 190, 137, 0.2);
+    }
+
+    &--purple {
+        background: #6856bf;
+        box-shadow: 0 2px 4px rgba(133, 111, 248, 0.2);
+    }
+}
+
+.c-new-intent-button {
+    position: relative;
+    bottom: 0;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+    height: 130px;
+    width: auto;
+
+    margin: 2.5px;
+    padding: 15px 20px;
+
+    min-width: 230px;
+    max-width: 400px;
+
+    border: 1px dashed $card-border-color;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(242, 242, 242, 0.2);
+
+    font-size: 16px;
+    font-weight: bold;
+    color: $new-intent-title-color;
+
+    background: white;
+
+    &:hover {
+        box-shadow: 0 2px 4px rgba(242, 242, 242, 0.65);
+        cursor: pointer;
+    }
+
+}
+
+
+@media only screen and (max-width : 770px) {
+    .c-new-intent-button {
+        order: -1;
+    }
+}

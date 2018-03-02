@@ -1,0 +1,24 @@
+.o-body {
+    text-align: center;
+    padding: 0 35px;
+
+    &--opened-modal {
+        overflow: hidden;
+    }
+
+    /**
+     * We hide the mask and intent modal if the body
+     * doesn't have the modifier 'opened-modal'.
+     */
+    &:not(&--opened-modal) {
+
+        .c-mask {
+            display: none;
+        }
+
+        .o-intent-modal-container {
+            display: none;
+        }
+    }
+
+}

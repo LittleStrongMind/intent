@@ -1,0 +1,29 @@
+
+body {
+    font-size: 0;
+}
+
+html,
+body,
+div,
+header,
+footer,
+svg,
+h1, h2, h3,
+section,
+aside,
+article,
+input, textarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input, textarea, button {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
