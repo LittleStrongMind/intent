@@ -61,7 +61,7 @@
 
     & textarea {
         resize: none;
-        white-space: nowrap;
+        white-space: pre;
         min-height: 150px;
     }
 
@@ -100,10 +100,6 @@
 
         label {
             opacity: .4;
-        }
-
-        textarea {
-            white-space: pre;
         }
 
         input {

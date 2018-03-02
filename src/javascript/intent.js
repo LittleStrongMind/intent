@@ -140,11 +140,13 @@
 
                     const data = {};
 
-                    that.form.inputs.forEach((input) => {
+                    for (let i = 0; i < that.form.inputs.length; i++) {
+
+                        const input = that.form.inputs[i];
 
                         data[input.name] = input.value;
 
-                    });
+                    }
 
                     return data;
                 },
@@ -175,9 +177,9 @@
                  */
                 disable () {
 
-                    that.form.inputs.forEach((input) => {
-                        input.readOnly = true;
-                    });
+                    for (let i = 0; i < that.form.inputs.length; i++) {
+                        that.form.inputs[i].readOnly = true;
+                    }
                 },
 
                 /**
@@ -185,9 +187,9 @@
                  */
                 enable () {
 
-                    that.form.inputs.forEach((input) => {
-                        input.readOnly = false;
-                    });
+                    for (let i = 0; i < that.form.inputs.length; i++) {
+                        that.form.inputs[i].readOnly = false;
+                    }
                 }
 
 
@@ -219,7 +221,7 @@
                     close: () => {
 
                         const handler = (event) => {
-                            event.preventDefault();
+                            event.preventDefault ? event.preventDefault() : (event.returnValue = false);
                             this.close();
                         };
 
@@ -241,9 +243,9 @@
 
                             let submittable = true;
 
-                            inputs.forEach((input) => {
-                                submittable = submittable && (input.value !== '');
-                            });
+                            for (let i = 0; i < inputs.length; i++) {
+                                submittable = submittable && (inputs[i].value !== '');
+                            }
 
                             if (this.DOM.actions.submit !== null)
                                 this.DOM.actions.submit.disabled = !submittable;
@@ -251,9 +253,9 @@
                             this.form.submittable  = submittable;
                         };
 
-                        inputs.forEach((input) => {
-                            input.addEventListener('input', handler.bind(this, input));
-                        });
+                        for (let i = 0; i < inputs.length; i++) {
+                            inputs[i].addEventListener('input', handler.bind(this, inputs[i]));
+                        }
 
                     },
 
@@ -483,7 +485,7 @@
 
                             this.DOM.title.addEventListener('click', (event) => {
 
-                                event.preventDefault();
+                                event.preventDefault ? event.preventDefault() : (event.returnValue = false);
 
                                 this.modal.open('view');
                                 this.modal.form.disable();
@@ -532,7 +534,7 @@
 
                         const handler = (event) => {
 
-                            event.preventDefault();
+                            event.preventDefault ? event.preventDefault() : (event.returnValue = false);
 
                             if (!this.modal.form.submittable) return;
 
@@ -571,13 +573,13 @@
 
                 edit: `
                 <svg class="c-card__actions__edit" role="button" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
                 </svg>
             `,
 
                 delete: `
                 <svg class="c-card__actions__delete" role="button" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path>
                 </svg>
             `
 
@@ -706,7 +708,7 @@
 
                         this.modal.DOM.actions.create.addEventListener('click', () => {
 
-                            event.preventDefault();
+                            event.preventDefault ? event.preventDefault() : (event.returnValue = false);
 
                             if (!this.modal.form.submittable) return;
 
